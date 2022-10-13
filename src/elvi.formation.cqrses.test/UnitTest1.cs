@@ -88,6 +88,51 @@ namespace elvi.formation.cqrses.test
             
             Assert.AreEqual(0, events.Count);
         }
+        
+        
+        [Test]
+        public void ShouldAllOrganisationsValidatorValidatedForValidationFolder2()
+        {
+            OrgannisationValidationCommand command = new OrgannisationValidationCommand("organisme1");
+            
+            ValidationFolder folder = new ValidationFolder(new List<DomainEvent>()
+            {
+                new OrgannisationValidationListed(new List<string>() {"organisme1", "organisme2"}),
+                new OrgannisationValidated("organisme2")
+            });
+            var events = folder.ProcessCommand(command);
+            
+            Assert.AreEqual(2, events.Count);
+            
+            OrgannisationValidated expectedEvent1 = new OrgannisationValidated("organisme1");
+            FolderValidated expectedEvent2 = new FolderValidated();
+            
+            Assert.IsInstanceOf<OrgannisationValidated>(expectedEvent1);
+            var validationEvent2 = events[0];
+            Assert.AreEqual(expectedEvent1,validationEvent2);
+            
+            CollectionAssert.Contains(events, expectedEvent2);
+        }
+        
+        [Test]
+        public void ShouldOrganisationsValidatorRejectForValidationFolder()
+        {
+            OrgannisationRejectCommand command = new OrgannisationRejectCommand("organisme1");
+            
+            ValidationFolder folder = new ValidationFolder(new List<DomainEvent>()
+            {
+                new OrgannisationValidationListed(new List<string>() {"organisme1", "organisme2"}),
+            });
+            var events = folder.ProcessCommand(command);
+            
+            Assert.AreEqual(1, events.Count);
+            var firstEvent = events.First();
+            
+            Assert.IsInstanceOf<FolderRejected>(firstEvent);
+            Assert.AreEqual("organisme1", ((FolderRejected)firstEvent).Rejector);
+
+        }
+        
     }
 
     public class ValidationFolder
@@ -129,6 +174,11 @@ namespace elvi.formation.cqrses.test
             _awaitingOrganismeValidator = domainEvent.ValidatorOrganisations.ToList();
         }
         
+        private void ApplyDomainEvent(FolderRejected domainEvent)
+        {
+            if(_awaitingOrganismeValidator.Contains(domainEvent.Rejector))
+                _awaitingOrganismeValidator.Remove(domainEvent.Rejector);
+        }
         
         
         public List<DomainEvent> ProcessCommand(EstablishOrganisationsCommand command)
@@ -154,9 +204,19 @@ namespace elvi.formation.cqrses.test
 
             return result;
         }
+
+        public List<DomainEvent> ProcessCommand(OrgannisationRejectCommand command)
+        {
+            if(_awaitingOrganismeValidator.Contains(command.Rejector))
+            {
+                var rejectEvent = new FolderRejected(command.Rejector);
+                ApplyDomainEvent(rejectEvent);
+                return new List<DomainEvent>() {rejectEvent};
+            }
+
+            return Enumerable.Empty<DomainEvent>().ToList();
+        }
+
+
     }
-    
-    
-    
-    
 }
