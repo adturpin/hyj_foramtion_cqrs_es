@@ -6,7 +6,6 @@ namespace elvi.formation.cqrses.test
     public class ValidationFolder
     {
         private List<string> _awaitingOrganismeValidator;
-        private List<string> _validatorOrganisations;
         private bool _isValided { get; set; }
         public ValidationFolder()
         {}
@@ -14,7 +13,6 @@ namespace elvi.formation.cqrses.test
         public ValidationFolder(List<DomainEvent> seedingEvents)
         {
             _awaitingOrganismeValidator = new List<string>();
-            _validatorOrganisations = new List<string>();
             Apply(seedingEvents);
         }
 
@@ -38,7 +36,6 @@ namespace elvi.formation.cqrses.test
         
         private void ApplyDomainEvent(OrgannisationValidationListed domainEvent)
         {
-            _validatorOrganisations = domainEvent.ValidatorOrganisations.ToList();
             _awaitingOrganismeValidator = domainEvent.ValidatorOrganisations.ToList();
         }
         

@@ -200,3 +200,11 @@ E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\ob
 E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\obj\Debug\net5.0\elvi.formation.cqrses.test.pdb
 E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\obj\Debug\net5.0\elvi.formation.cqrses.test.genruntimeconfig.cache
 E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\obj\Debug\net5.0\ref\elvi.formation.cqrses.test.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\Dapper.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\Dapperer.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\System.Data.SqlClient.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\dev\Formation_CQRS_ES\hyj_foramtion_cqrs_es\src\elvi.formation.cqrses.test\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

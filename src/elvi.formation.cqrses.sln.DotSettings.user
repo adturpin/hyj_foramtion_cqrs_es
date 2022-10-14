@@ -1,15 +1,28 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1c196d68_002D1de8_002D4a8a_002D9b15_002Dc470921f32f7/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="ShouldGetEventsFormInMemoryEventStoreFromMultiStream" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldGetEventsFormInMemoryEventStoreFromMultiStream&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldStoreEventsWithSequenceVersionFormInMemoryEventStore&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=71bd2cbd_002D5071_002D4558_002D9137_002D138e64717b38/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.Tests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ac821fd2_002D4e8a_002D4f17_002Db6f6_002D6c1d40b47c63/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldGetAwaitingOrganismeNumberForFolderValidation" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ac821fd2_002D4e8a_002D4f17_002Db6f6_002D6c1d40b47c63/@EntryIndexedValue">&lt;SessionState ContinuousTestingIsOn="True" ContinuousTestingMode="1" Name="ShouldGetAwaitingOrganismeNumberForFolderValidation" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.ReadModelTests.ShouldGetAwaitingOrganismeNumberForFolderValidation&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.ReadModelTests.ShouldGetAwaitingOrganismeNumberForFolderValidationFromHandler&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.PubSubTests.ShouldStoreEventsWhenPublishEvent&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.PubSubTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldGetEventsFormInMemoryEventStore&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ca003c4f_002Dc9cf_002D478d_002Dbf6d_002Df264237af2db/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ShouldStoreEventsWithGoodSequenceVersionFormInMemoryEventStore" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldStoreEventsWithGoodSequenceVersionFormInMemoryEventStore&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldSqlServer&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
