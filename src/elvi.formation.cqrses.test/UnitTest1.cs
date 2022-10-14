@@ -115,9 +115,9 @@ namespace elvi.formation.cqrses.test
         }
         
         [Test]
-        public void ShouldOrganisationsValidatorRejectForValidationFolder()
+        public void ShouldOrganisationsValidatorApplyVetoForValidationFolder()
         {
-            OrgannisationRejectCommand command = new OrgannisationRejectCommand("organisme1");
+            OrganisationApplyVetoCommand command = new OrganisationApplyVetoCommand("organisme1");
             
             ValidationFolder folder = new ValidationFolder(new List<DomainEvent>()
             {
@@ -125,11 +125,15 @@ namespace elvi.formation.cqrses.test
             });
             var events = folder.ProcessCommand(command);
             
-            Assert.AreEqual(1, events.Count);
-            var firstEvent = events.First();
+            Assert.AreEqual(2, events.Count);
             
-            Assert.IsInstanceOf<FolderRejected>(firstEvent);
-            Assert.AreEqual("organisme1", ((FolderRejected)firstEvent).Rejector);
+            // var firstEvent = events.First();
+            // Assert.IsInstanceOf<FolderArchived>(firstEvent);
+            // Assert.AreEqual("organisme1", ((FolderArchived)firstEvent).Archiver);
+            
+            var lastEvent = events.Last();
+            Assert.IsInstanceOf<FolderArchived>(lastEvent);
+            Assert.AreEqual("organisme1", ((FolderArchived)lastEvent).Archiver);
 
         }
         
@@ -174,12 +178,15 @@ namespace elvi.formation.cqrses.test
             _awaitingOrganismeValidator = domainEvent.ValidatorOrganisations.ToList();
         }
         
-        private void ApplyDomainEvent(FolderRejected domainEvent)
+        private void ApplyDomainEvent(FolderArchived domainEvent)
         {
-            if(_awaitingOrganismeValidator.Contains(domainEvent.Rejector))
-                _awaitingOrganismeValidator.Remove(domainEvent.Rejector);
+            if(_awaitingOrganismeValidator.Contains(domainEvent.Archiver))
+                _awaitingOrganismeValidator.Remove(domainEvent.Archiver);
+        } 
+        private void ApplyDomainEvent(VetoDisposed domainEvent)
+        {
+            // TODO: reset ?
         }
-        
         
         public List<DomainEvent> ProcessCommand(EstablishOrganisationsCommand command)
         {
@@ -205,13 +212,15 @@ namespace elvi.formation.cqrses.test
             return result;
         }
 
-        public List<DomainEvent> ProcessCommand(OrgannisationRejectCommand command)
+        public List<DomainEvent> ProcessCommand(OrganisationApplyVetoCommand command)
         {
             if(_awaitingOrganismeValidator.Contains(command.Rejector))
             {
-                var rejectEvent = new FolderRejected(command.Rejector);
+                var rejectEvent = new FolderArchived(command.Rejector);
                 ApplyDomainEvent(rejectEvent);
-                return new List<DomainEvent>() {rejectEvent};
+                var vetoDeposted = new VetoDisposed();
+                ApplyDomainEvent(vetoDeposted);
+                return new List<DomainEvent>() {vetoDeposted, rejectEvent};
             }
 
             return Enumerable.Empty<DomainEvent>().ToList();

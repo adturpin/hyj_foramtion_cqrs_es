@@ -1,10 +1,10 @@
 ﻿namespace elvi.formation.cqrses.test
 {
-    public class OrgannisationRejectCommand : DomainCommand
+    public class OrganisationApplyVetoCommand : DomainCommand
     {
         public string Rejector { get; }
 
-        public OrgannisationRejectCommand(string rejector)
+        public OrganisationApplyVetoCommand(string rejector)
         {
             Rejector = rejector;
         }
