@@ -24,5 +24,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldStoreEventsWithGoodSequenceVersionFormInMemoryEventStore&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.EventStoreTests.ShouldSqlServer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::AB56271F-2C08-4596-8076-15FAF52A6612::net5.0::elvi.formation.cqrses.test.CommandHandlerTests.ShouldReadModelUpdateByCommandHandler&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
